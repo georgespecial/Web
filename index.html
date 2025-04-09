@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продуктовый магазин</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <!-- Верхний баннер с шоколадными конфетами -->
+        <section class="hero">
+            <div class="hero__container">
+                <img src="images/banner.jpg" alt="Шоколадные конфеты" class="hero__image">
+                <button type="button" class="button button--video">Смотреть видео</button>
+            </div>
+        </section>
+
+        <!-- Сетка с товарами -->
+        <section class="products">
+            <div class="products__grid">
+                <!-- Горох -->
+                <article class="product-card product-card--large">
+                    <div class="product-card__image">
+                        <img src="images/green-beans.jpg" alt="Горох в стручках">
+                        <button class="product-card__favorite">
+                            <img src="images/heart-icon.svg" alt="В избранное">
+                        </button>
+                        <button class="product-card__view">
+                            <img src="images/eye-icon.svg" alt="Быстрый просмотр">
+                        </button>
+                        <div class="product-card__tags">
+                            <span class="tag tag--sale">-29%</span>
+                            <span class="tag tag--new">Товар дня</span>
+                        </div>
+                    </div>
+                    <div class="product-card__info">
+                        <h3>Горох в стручках, 1 кг</h3>
+                        <div class="product-card__price">570 ₽</div>
+                        <button class="button--primary">Оставить заявку</button>
+                    </div>
+                </article>
+
+                <!-- Правая колонка с карточками -->
+                <div class="products__right-column">
+                    <!-- Голубика -->
+                    <article class="product-card product-card--blueberry">
+                        <div class="product-card__image">
+                            <img src="images/blueberry.jpg" alt="Голубика лесная">
+                            <button class="product-card__favorite">
+                                <img src="images/heart-icon.svg" alt="В избранное">
+                            </button>
+                            <button class="product-card__view">
+                                <img src="images/eye-icon.svg" alt="Быстрый просмотр">
+                            </button>
+                            <div class="product-card__tags">
+                                <span class="tag tag--sale">-31%</span>
+                                <span class="tag tag--special">Распродажа</span>
+                            </div>
+                        </div>
+                        <div class="product-card__info">
+                            <h3>Голубика лесная, 200 г</h3>
+                            <div class="product-card__price">140 ₽</div>
+                            <button class="button--primary">Оставить заявку</button>
+                        </div>
+                    </article>
+
+                    <!-- Морковь -->
+                    <article class="product-card product-card--carrot">
+                        <div class="product-card__image">
+                            <img src="images/carrot.jpg" alt="Морковь мытая">
+                            <button class="product-card__favorite">
+                                <img src="images/heart-icon.svg" alt="В избранное">
+                            </button>
+                            <button class="product-card__view">
+                                <img src="images/eye-icon.svg" alt="Быстрый просмотр">
+                            </button>
+                            <div class="product-card__tags">
+                                <span class="tag tag--hit">Хит</span>
+                            </div>
+                        </div>
+                        <div class="product-card__info">
+                            <h3>Морковь мытая, 1 кг</h3>
+                            <div class="product-card__price">140 ₽</div>
+                            <button class="button--primary">Оставить заявку</button>
+                        </div>
+                    </article>
+
+                    <!-- Попкорн -->
+                    <article class="product-card product-card--popcorn">
+                        <div class="product-card__image">
+                            <img src="images/popcorn.jpg" alt="Попкорн солёный">
+                            <button class="product-card__favorite">
+                                <img src="images/heart-icon.svg" alt="В избранное">
+                            </button>
+                            <button class="product-card__view">
+                                <img src="images/eye-icon.svg" alt="Быстрый просмотр">
+                            </button>
+                            <div class="product-card__tags">
+                                <span class="tag tag--new">Товар дня</span>
+                                <span class="tag tag--sale">-29%</span>
+                            </div>
+                        </div>
+                        <div class="product-card__info">
+                            <h3>Попкорн солёный, для СВЧ-печи, 120 г</h3>
+                            <div class="product-card__price">160 ₽</div>
+                            <button class="button--primary">Оставить заявку</button>
+                        </div>
+                    </article>
+
+                    <!-- Эскимо -->
+                    <article class="product-card product-card--icecream">
+                        <div class="product-card__image">
+                            <img src="images/ice-cream.jpg" alt="Эскимо с малиной">
+                            <button class="product-card__favorite">
+                                <img src="images/heart-icon.svg" alt="В избранное">
+                            </button>
+                            <button class="product-card__view">
+                                <img src="images/eye-icon.svg" alt="Быстрый просмотр">
+                            </button>
+                            <div class="product-card__tags">
+                                <span class="tag tag--hit">Хит</span>
+                            </div>
+                        </div>
+                        <div class="product-card__info">
+                            <h3>Эскимо с малиной, 150 г</h3>
+                            <div class="product-card__price">190 ₽</div>
+                            <button class="button--primary">Оставить заявку</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно с формой -->
+    <div class="modal" id="formModal">
+        <div class="modal__content">
+            <button class="modal__close" type="button" aria-label="Закрыть">&times;</button>
+            <form class="form">
+                <h2>Оставьте заявку</h2>
+                <div class="form__group">
+                    <input type="text" id="name" name="name" placeholder="Ваше имя *" required>
+                    <div class="form__error">Пожалуйста, введите ваше имя</div>
+                </div>
+                <div class="form__group">
+                    <input type="tel" id="phone" name="phone" placeholder="Номер телефона*" required>
+                    <div class="form__error">Пожалуйста, введите корректный номер телефона</div>
+                </div>
+                <div class="form__checkbox">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">Соглашаюсь на обработку персональных данных</label>
+                </div>
+                <button type="submit" class="button button--primary">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно быстрого просмотра -->
+    <div class="modal-overlay">
+        <div class="modal">
+            <button class="modal__close-button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h2 class="modal__title">Быстрый просмотр</h2>
+            <div class="modal__product-info"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

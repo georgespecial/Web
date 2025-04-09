@@ -1,0 +1,28 @@
+// Цвета
+$color-primary: #00A82D;
+$color-primary-dark: #008f26;
+$color-text: #333333;
+$color-text-light: #666666;
+$color-background: #FFFFFF;
+$color-border: #E5E5E5;
+$color-error: #FF3B30;
+
+// Тени
+$shadow-card: 0 2px 4px rgba(0, 0, 0, 0.05);
+$shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+$shadow-button: 0 4px 12px rgba(0, 168, 45, 0.2);
+
+// Размеры
+$container-max-width: 1200px;
+$border-radius: 8px;
+$border-radius-small: 4px;
+
+// Точки перелома
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+
+// Анимации
+$transition-default: all 0.3s ease;
+$transition-fast: all 0.2s ease; 

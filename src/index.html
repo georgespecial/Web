@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продукты</title>
+    <link rel="stylesheet" href="styles/main.scss">
+</head>
+<body>
+    <div class="hero">
+        <div class="hero__container">
+            <img src="assets/images/hero.jpg" alt="Баннер" class="hero__image">
+            <button class="button button--video" type="button">Смотреть видео</button>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="products__container">
+            <div class="products__left-column">
+                <!-- Карточка с горохом -->
+                <article class="product-card product-card--large">
+                    <div class="product-card__image">
+                        <img src="assets/images/peas.jpg" alt="Горох в стручках">
+                        <div class="product-card__tags">
+                            <span class="tag tag--new">Новинка</span>
+                            <span class="tag tag--hit">Хит</span>
+                        </div>
+                        <button class="product-card__favorite" type="button">
+                            <img src="assets/images/heart-icon.svg" alt="В избранное">
+                        </button>
+                        <button class="product-card__view" type="button">
+                            <img src="assets/images/eye-icon.svg" alt="Быстрый просмотр">
+                        </button>
+                    </div>
+                    <div class="product-card__info">
+                        <h3>Горох в стручках</h3>
+                        <div class="product-card__price">120 ₽</div>
+                        <button class="button button--primary" type="button">Оставить заявку</button>
+                    </div>
+                </article>
+            </div>
+
+            <div class="products__right-column">
+                <!-- Остальные карточки -->
+                <!-- ... -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно с видео -->
+    <div class="modal" id="videoModal">
+        <div class="modal__content">
+            <button class="modal__close" type="button" aria-label="Закрыть">&times;</button>
+            <div class="modal__video">
+                <iframe id="videoPlayer" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно с формой -->
+    <div class="modal" id="requestModal">
+        <div class="modal__content">
+            <button class="modal__close" type="button" aria-label="Закрыть">&times;</button>
+            <form class="form">
+                <h2>Оставьте заявку</h2>
+                <div class="form__group">
+                    <input type="text" id="name" name="name" placeholder="Ваше имя *" required>
+                    <div class="form__error">Пожалуйста, введите ваше имя</div>
+                </div>
+                <div class="form__group">
+                    <input type="tel" id="phone" name="phone" placeholder="Номер телефона*" required>
+                    <div class="form__error">Пожалуйста, введите корректный номер телефона</div>
+                </div>
+                <div class="form__checkbox">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">Соглашаюсь на обработку персональных данных</label>
+                </div>
+                <button type="submit" class="button button--primary">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html> 

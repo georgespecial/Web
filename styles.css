@@ -1,0 +1,706 @@
+/* Основные стили */
+:root {
+    --primary-color: #00A82D;
+    --text-color: #333333;
+    --white: #FFFFFF;
+    --background: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.5;
+    background-color: var(--background);
+}
+
+/* Верхний баннер */
+.hero {
+    width: 100%;
+    margin: 48px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--white);
+    padding: 0 16px;
+}
+
+.hero__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 360px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.button--video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.button--video:hover {
+    background-color: #009728;
+}
+
+/* Сетка товаров */
+.products {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.products__grid {
+    display: grid;
+    grid-template-columns: 378px 1fr;
+    gap: 16px;
+}
+
+/* Контейнер для правой колонки */
+.products__right-column {
+    display: grid;
+    grid-template-columns: 387px 184px 184px;
+    gap: 16px;
+}
+
+/* Позиционирование в сетке */
+.product-card--popcorn {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+.product-card--icecream {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+
+/* Общие стили для изображений */
+.product-card__image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.product-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Карточки товаров */
+.product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Информация о продукте */
+.product-card__info {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    min-height: 90px;
+}
+
+.product-card__info h3 {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+    font-weight: normal;
+    line-height: 1.3;
+}
+
+.product-card__price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin: 4px 0;
+}
+
+/* Кнопка заявки */
+.button--primary {
+    background: #00A82D;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    margin-top: 8px;
+}
+
+/* Теги на карточках */
+.product-card__tags {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: flex;
+    gap: 4px;
+    z-index: 2;
+}
+
+.tag {
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    color: white;
+    line-height: 1.2;
+}
+
+.tag--sale {
+    background: #FF3B30;
+}
+
+.tag--new {
+    background: #FF9500;
+}
+
+.tag--hit {
+    background: #AF52DE;
+}
+
+.tag--special {
+    background: #FF2D55;
+}
+
+/* Кнопки действий */
+.product-card__favorite,
+.product-card__view {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    padding: 0;
+}
+
+.product-card__favorite {
+    top: 8px;
+    right: 8px;
+}
+
+.product-card__view {
+    top: 8px;
+    right: 36px;
+}
+
+.product-card__favorite img,
+.product-card__view img {
+    width: 14px;
+    height: 14px;
+    opacity: 0.7;
+}
+
+/* Специфичные стили для разных типов карточек */
+/* Большая карточка гороха */
+.product-card--large {
+    height: 328px;
+}
+
+.product-card--large .product-card__image {
+    height: 220px;
+}
+
+.product-card--large .product-card__info {
+    height: 108px;
+}
+
+/* Средние карточки (голубика и морковь) */
+.product-card--blueberry,
+.product-card--carrot {
+    width: 387px;
+    height: 154px;
+    display: grid;
+    grid-template-columns: 154px 1fr;
+}
+
+.product-card--blueberry .product-card__image,
+.product-card--carrot .product-card__image {
+    width: 154px;
+    height: 154px;
+}
+
+.product-card--blueberry .product-card__info,
+.product-card--carrot .product-card__info {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Высокие карточки (попкорн и мороженое) */
+.product-card--popcorn,
+.product-card--icecream {
+    width: 184px;
+    height: 324px;
+}
+
+.product-card--popcorn .product-card__image {
+    height: 180px;
+}
+
+.product-card--icecream .product-card__image {
+    height: 200px;
+}
+
+.product-card--popcorn .product-card__info {
+    height: 144px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card--icecream .product-card__info {
+    height: 124px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card--popcorn .product-card__price,
+.product-card--icecream .product-card__price {
+    margin: 4px 0 auto;
+}
+
+.product-card--popcorn .button--primary,
+.product-card--icecream .button--primary {
+    margin-top: 12px;
+}
+
+/* Модальные окна */
+.modal,
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 51, 51, 0.6);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.is-active,
+.modal-overlay.is-active {
+    display: flex;
+}
+
+.modal__content,
+.modal-overlay .modal {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    animation: modalShow 0.3s ease;
+}
+
+.modal-overlay .modal {
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: block;
+    margin: 0;
+    padding: 24px;
+}
+
+@keyframes modalShow {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal__close,
+.modal__close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 24px;
+    line-height: 1;
+    color: #999;
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+}
+
+.modal__close:hover,
+.modal__close-button:hover {
+    color: #333;
+    transform: rotate(90deg);
+}
+
+.modal__video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.modal__video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.modal__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #333333;
+}
+
+.modal__product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Форма */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form h2 {
+    font-size: 20px;
+    color: #333;
+    margin: 0 0 16px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form__group {
+    position: relative;
+}
+
+.form__group input[type="text"],
+.form__group input[type="tel"] {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form__group input[type="text"]:focus,
+.form__group input[type="tel"]:focus {
+    border-color: #00A82D;
+    outline: none;
+}
+
+.form__group input[type="text"]::placeholder,
+.form__group input[type="tel"]::placeholder {
+    color: #999;
+}
+
+.form__error {
+    display: none;
+    color: #FF3B30;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.form__group.error input {
+    border-color: #FF3B30;
+}
+
+.form__group.error .form__error {
+    display: block;
+}
+
+.form__checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.form__checkbox input[type="checkbox"] {
+    margin-top: 3px;
+}
+
+.form__checkbox label {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.form .button--primary {
+    margin-top: 8px;
+}
+
+/* Стили для модального окна быстрого просмотра */
+.quick-view-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-body {
+    display: flex;
+    gap: 24px;
+}
+
+.modal-body img {
+    width: 50%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.modal-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal-info h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.modal-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .products__right-column {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .product-card {
+        margin: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .products__left-column,
+    .products__right-column {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .product-card--peas {
+        grid-column: auto;
+    }
+
+    .product-card {
+        height: auto !important;
+        margin: 0 !important;
+    }
+
+    .product-card__image {
+        height: 200px !important;
+    }
+
+    .product-card__info {
+        padding: 15px;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+        padding: 0 15px;
+    }
+
+    .products__left-column,
+    .products__right-column {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .product-card {
+        max-width: 100%;
+    }
+
+    .modal__content,
+    .modal-overlay .modal {
+        max-width: calc(100% - 32px);
+        margin: 16px;
+        padding: 16px;
+    }
+
+    .modal__close,
+    .modal__close-button {
+        top: 8px;
+        right: 8px;
+    }
+
+    .form {
+        padding: 15px;
+    }
+}
+
+/* Слайдер для мобильной версии */
+@media (max-width: 768px) {
+    .products__container {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .products__slider {
+        display: flex;
+        transition: transform 0.3s ease;
+        width: 100%;
+    }
+
+    .products__slide {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .slider-controls {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .slider-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #E5E5E5;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .slider-dot.active {
+        background: #00A82D;
+    }
+}
+
+/* Улучшенные hover-эффекты */
+@media (hover: hover) {
+    .button--primary:hover {
+        background: #008f26;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 168, 45, 0.2);
+    }
+
+    .product-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .product-card__favorite:hover,
+    .product-card__view:hover {
+        transform: scale(1.15);
+        opacity: 0.9;
+    }
+
+    .modal__close:hover,
+    .modal__close-button:hover {
+        color: #333;
+        transform: rotate(90deg);
+    }
+}
+
+/* Scrollbar styles */
+.modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background: #F5F5F5;
+    border-radius: 4px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: #CCCCCC;
+    border-radius: 4px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+    background: #BBBBBB;
+} 

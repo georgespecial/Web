@@ -1,0 +1,89 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+
+    &.active {
+        display: flex;
+    }
+
+    &__content {
+        background: #fff;
+        border-radius: 8px;
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        animation: modalShow 0.3s ease;
+
+        // Специальные стили для видео-модального окна
+        .modal__video & {
+            background: transparent;
+            max-width: 1024px;
+            aspect-ratio: 16/9;
+        }
+    }
+
+    &__video {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; // Соотношение сторон 16:9
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 32px;
+        height: 32px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 32px;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 1;
+        padding: 0;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: rotate(90deg);
+        }
+
+        // Для мобильных устройств
+        @media (max-width: 768px) {
+            top: -40px;
+            right: 0;
+        }
+    }
+}
+
+// Анимация появления модального окна
+@keyframes modalShow {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
